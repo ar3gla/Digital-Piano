@@ -1,0 +1,43 @@
+# ===== Keil uVision / MDK =====
+Listings/
+Objects/
+*.uvgui.*
+*.uvoptx
+*.uvmpw
+*.uvproj
+*.uvprojx.backup*
+*.dep
+*.crf
+*.d
+*.o
+*.obj
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.bak
+JLinkLog.txt
+*/Objects/
+*/Listings/
+
+# ===== CMSIS / RTE (usually auto-generated) =====
+RTE/
+*.scvd
+
+# ===== VS Code =====
+.vscode/
+*.code-workspace
+
+# ===== GCC / arm-none-eabi builds =====
+build/
+out/
+*.a
+*.srec
+
+# ===== OS / editor =====
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp

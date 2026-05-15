@@ -1,0 +1,16 @@
+Req ID,Type,Requirement,Spec reference,Implementation (file),Verification (TC IDs),Evidence path(s),Status,Notes
+RQ-01,Design,System P1 outputs square wave to speaker,System requirements & Waveform generation details,,TC-MOD-SYSTICK,./systick_test_tones.mp4,Pass,SysTick-driven square-wave tone generation
+RQ-02,Design,System P2 outputs a sine wave using 6-bit R-2R DAC with 64-sample sine lookup table,System requirements & Waveform generation details,,,,Not started,Music module exists but 64-sample sine LUT not implemented
+RQ-03,Functional,"Piano mode: Press and hold C, D, E, F to play corresponding note continuously without gaps; stops immediately when button released",Operating Modes,GPIO.c; SysTick.c,TC-MOD-GPIO-IN;TC-MOD-SYSTICK,./gpio_input_test_keys.mp4;./systick_test_tones.mp4,Pass,GPIO input drives continuous tone output
+RQ-04,Functional,"Auto-Play Mode: plays one of three songs (Mary Had a Little Lamb, Twinkle Twinkle Little Star, Happy Birthday) in a loop until song is changed",Operating Modes,music.c,TC-MOD-MUSIC,./music_test_happybirthday.mp4,Pass,Happy Birthday verified
+RQ-05,Functional,Switch 1 toggles between Piano mode and Auto-Play mode,User Controls,GPIO.c,TC-MOD-GPIO-IN,./gpio_input_test_keys.mp4,Pass,Mode switch detected via GPIO
+RQ-06,Functional,"Switch 2 changes octave in Piano mode in round-robin order (Lower C → Middle C → Upper C); system starts in Lower C after reset",User Controls,GPIO.c,TC-MOD-GPIO-IN,./gpio_input_test_keys.mp4,Pass,Octave switch functional
+RQ-07,Functional,"Switch 2 changes song in Auto-Play mode in round-robin order (Mary Had a Little Lamb → Twinkle Twinkle → Happy Birthday)",User Controls,GPIO.c,TC-MOD-GPIO-IN,./gpio_input_test_keys.mp4,Pass,Song select input verified
+RQ-08,Functional,Octave selected in Piano mode carries over as the starting octave when entering Auto-Play mode,Operating Modes,music.c,,,Not started,System-level logic not completed
+RQ-09,Functional,"When song selection changes in Auto-Play mode, the new song must restart from the beginning immediately",Operating Modes,music.c,,,Not started,Restart logic not verified
+CN-01,Constraint,System clock must be >16 MHz and <80 MHz,Implementation constraints,PLL.c,,,Pass,PLL configured to 40 MHz
+CN-02,Constraint,"Must use interrupts for: (1) hardware timer and (2) push buttons/switches",Implementation constraints,SysTick.c; GPIO.c,,,Not started,Button interrupts not yet confirmed
+CN-03,Constraint,Must use hardware timer(s) for timing control,Implementation constraints,SysTick.c,,,Pass,SysTick used as hardware timer
+CN-04,Constraint,At most one piano key may be pressed at a time (design assumption),User Controls,GPIO.c,TC-MOD-GPIO-IN,./gpio_input_test_keys.mp4,Pass,Assumption held during testing
+CN-05,Constraint,"Hardware: TM4C123 LaunchPad, 4 push buttons, speaker + amplifier, resistors for 6-bit R-2R DAC",Hardware/Components,GPIO.c; SysTick.c; music.c,TC-MOD-GPIO-OUT;TC-MOD-GPIO-IN,./gpio_output_test_leds.jpg;./gpio_input_test_keys.mp4,Pass,Hardware exercised during module tests
+RQ-10,Functional:Extra Credit,Optional: Add a fourth video game song as an option in Auto-Play mode,Extra credit,music.c,,,Not started,Not implemented
