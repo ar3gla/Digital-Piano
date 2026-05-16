@@ -1,9 +1,9 @@
-# CECS 447 – Project 1: Digital Piano & Music Box
+﻿# CECS 447 – Project 1: Digital Piano & Music Box
 
 **Course:** CECS 447 - Embedded Systems  
 **Project:** Project 1 – Digital Piano  
 **Instructor:** Dr. Min He  
-**Author:** Alfredo  
+**Author:** Alfredo Regla  
 **Institution:** California State University, Long Beach
 
 ---

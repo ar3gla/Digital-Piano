@@ -1,4 +1,4 @@
-# Project 1 Step 4 - Feature Implementation Plan & Task Assignment
+﻿# Project 1 Step 4 - Feature Implementation Plan & Task Assignment
 
 ## Module Overview
 | Module Name | Description | Primary Requirements |
@@ -15,7 +15,7 @@
 ## Task Assignments
 | Team Member | Modules Assigned | Requirements Owned |
 |------------|------------------|--------------------|
-| Alfredo | All modules | Full system implementation including clock config, GPIO, SysTick, music logic, and DAC |
+| Alfredo Regla | All modules | Full system implementation including clock config, GPIO, SysTick, music logic, and DAC |
 
 ---
 
